@@ -1,0 +1,348 @@
+/* Reset default margin, padding, and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #FE7A36;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.site-title, h1 {
+    color: #f80000;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: monospace;
+    letter-spacing: 7px;
+    cursor: pointer;
+  }
+  .site-title {
+    color: #f7eedd;
+    font-size: 2em;
+    margin-bottom: 5px;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  h1 span {
+    transition: .5s linear;
+  }
+  
+  h1:hover span:nth-child(1) {
+    margin-right: 5px;
+  }
+  
+  h1:hover span:nth-child(1):after {
+    content: "'";
+  }
+  
+  h1:hover span:nth-child(2) {
+    margin-left: 30px;
+  }
+  
+  h1:hover span {
+    color: #ff0000;
+    text-shadow: 0 0 10px #f93535,
+                 0 0 20px #e11717, 
+                 0 0 40px #bc1f1f;
+  }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo img {
+    max-width: 150px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #F7EEDD;
+    font-weight: bold;
+}
+
+.start-voting-btn {
+    background-color: #3652AD;
+    color: #F7EEDD;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s; /* Added transition */
+}
+
+.start-voting-btn:hover {
+    background-color: #45a049;
+    color: #FFFFFF; /* Change text color on hover */
+}
+
+main {
+    padding: 50px;
+    text-align: center;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer ul {
+    list-style-type: none;
+}
+
+footer ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    flex: 1 0 calc(33.33% - 20px);
+    margin: 50px;
+    padding: 100px;
+    border: 1px solid #000000;
+    background-image: url('https://www.shutterstock.com/image-vector/election-vote-box-illustration-vector-260nw-2355756037.jpg');
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    transition: all 0.3s ease; /* Add transition for smoother hover effect */
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.container:hover {
+    transform: translateY(-5px); /* Add a slight lift on hover */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Enhance box shadow on hover */
+}
+.container h3 {
+    color: #000000; /* Set font color to white */
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.map-container {
+    text-align: center;
+}
+
+/* The integrated SCSS code starts here */
+.main-content {
+    text-align: center;
+    text-transform: uppercase;
+    scroll-snap-type: y mandatory;
+    position: relative;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.hover,
+.word,
+h1 {
+    cursor: pointer;
+}
+
+h1 {
+    position: relative;
+    color: #fff;
+    font: 900 60px Montserrat;
+    text-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.concept {
+    position: relative;
+    padding: 5em;
+    height: 100vh;
+    overflow: hidden;
+    scroll-snap-align: center;
+    &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: radial-gradient(rgba(0, 0, 0, 0.3), transparent);
+        opacity: 0;
+        transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    &:hover:before {
+        opacity: 0.5;
+    }
+}
+
+.concept-one {
+    display: grid;
+    grid: repeat(3, 1fr) / repeat(3, 1fr);
+    background: url("https://cekdptonline.kpu.go.id/cekdptonlone.jpg") no-repeat center center / cover;
+    padding: 8em;
+    h1 {
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 50%;
+        margin-top: -30px;
+        transition: 0.5s ease;
+        z-index: 0;
+        letter-spacing: 25px;
+    }
+    .hover {
+        z-index: 1;
+    }
+    .hover-1:hover ~ h1 { left: 30px; margin-top: -10px; }
+    .hover-2:hover ~ h1 { margin-top: -10px; }
+    .hover-3:hover ~ h1 { right: 30px; margin-top: -10px; }
+    .hover-4:hover ~ h1 { left: 30px; }
+    .hover-6:hover ~ h1 { right: 30px; }
+    .hover-7:hover ~ h1 { left: 30px; margin-top: -50px; }
+    .hover-8:hover ~ h1 { margin-top: -50px; }
+    .hover-9:hover ~ h1 { right: 30px; margin-top: -50px; }
+}
+
+.concept-two {
+    display: grid;
+    grid: repeat(3, 1fr) / repeat(3, 1fr);
+    background: url("https://framerusercontent.com/images/SoH1sjbv6ZHNumSiMvnmD2ZoKQo.webp") no-repeat center center / cover;
+    padding: 8em;
+    h1 {
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 50%;
+        margin-top: -30px;
+        transition: 0.5s ease;
+        z-index: 0;
+        letter-spacing: 25px;
+    }
+    .hover {
+        z-index: 1;
+    }
+    .hover-1:hover ~ h1 { left: 30px; margin-top: -10px; }
+    .hover-2:hover ~ h1 { margin-top: -10px; }
+    .hover-3:hover ~ h1 { right: 30px; margin-top: -10px; }
+    .hover-4:hover ~ h1 { left: 30px; }
+    .hover-6:hover ~ h1 { right: 30px; }
+    .hover-7:hover ~ h1 { left: 30px; margin-top: -50px; }
+    .hover-8:hover ~ h1 { margin-top: -50px; }
+    .hover-9:hover ~ h1 { right: 30px; margin-top: -50px; }
+}
+.concept-three {
+    display: grid;
+    grid: repeat(3, 1fr) / repeat(3, 1fr);
+    background: url("https://backpanel.kemlu.go.id/PublishingImages/pendaftaran%20pemilu%20-%20web.png") no-repeat center center / cover;
+    padding: 8em;
+    h1 {
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 50%;
+        margin-top: -30px;
+        transition: 0.5s ease;
+        z-index: 0;
+        letter-spacing: 25px;
+    }
+    .hover {
+        z-index: 1;
+    }
+    .hover-1:hover ~ h1 { left: 30px; margin-top: -10px; }
+    .hover-2:hover ~ h1 { margin-top: -10px; }
+    .hover-3:hover ~ h1 { right: 30px; margin-top: -10px; }
+    .hover-4:hover ~ h1 { left: 30px; }
+    .hover-6:hover ~ h1 { right: 30px; }
+    .hover-7:hover ~ h1 { left: 30px; margin-top: -50px; }
+    .hover-8:hover ~ h1 { margin-top: -50px; }
+    .hover-9:hover ~ h1 { right: 30px; margin-top: -50px; }
+}
+
+@keyframes falls {
+    0% {
+        opacity: 0;
+        top: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        top: 100px;
+    }
+}
